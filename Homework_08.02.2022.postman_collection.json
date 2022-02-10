@@ -1,0 +1,477 @@
+{
+	"info": {
+		"_postman_id": "3feedc90-0dba-4e38-8720-d820454093ba",
+		"name": "Homework_08.02.2022",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Coupon",
+			"item": [
+				{
+					"name": "Create coupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<coupon>\r\n  <coupon_code>1</coupon_code>\r\n  <name>Special $2 off coupon</name>\r\n  <discount_type>dollars</discount_type>\r\n    <discount_in_cents>\r\n    <USD>200</USD>\r\n  </discount_in_cents>\r\n  <redeem_by_date>2022-12-31</redeem_by_date>\r\n  <duration>temporal</duration>\r\n  <temporal_unit>day</temporal_unit>\r\n  <temporal_amount>28</temporal_amount>\r\n  <max_redemptions>200</max_redemptions>\r\n  <max_redemptions_per_account>1</max_redemptions_per_account>\r\n  <applies_to_all_plans>true</applies_to_all_plans>\r\n</coupon>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/coupons",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"coupons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get coupon",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/coupons/1",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"coupons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update coupon",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<coupon>\r\n  <name>10</name>\r\n  <description>New coupon description for the hosted pages.</description>\r\n  <invoice_description>New coupon description for the invoice.</invoice_description>\r\n  <redeem_by_date>2022-12-31</redeem_by_date>\r\n  <max_redemptions>500</max_redemptions>\r\n  <max_redemptions_per_account>1</max_redemptions_per_account>\r\n</coupon>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/coupons/1",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"coupons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete coupon",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/coupons/1",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"coupons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plans",
+			"item": [
+				{
+					"name": "Create plan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<plan>\r\n  <plan_code>platinum</plan_code>\r\n  <name>Gold plan</name>\r\n  <unit_amount_in_cents>\r\n    <USD>6000</USD>\r\n  </unit_amount_in_cents>\r\n  <setup_fee_in_cents>\r\n    <USD>1000</USD>\r\n   </setup_fee_in_cents>\r\n  <plan_interval_length>1</plan_interval_length>\r\n  <plan_interval_unit>months</plan_interval_unit>\r\n  <tax_exempt>false</tax_exempt>\r\n</plan>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/plans",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get plan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/plans/gold",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"plans",
+								"gold"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update plan",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<plan>\r\n  <setup_fee_in_cents>\r\n    <USD>1000</USD>\r\n  </setup_fee_in_cents>\r\n</plan>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/plans/gold",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"plans",
+								"gold"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete plan",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/plans/gold",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"plans",
+								"gold"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plans addons",
+			"item": [
+				{
+					"name": "Create addon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<add_on>\r\n  <add_on_code>ipaddresses</add_on_code>\r\n  <name>Extra IP Addresses</name>\r\n  <unit_amount_in_cents>\r\n    <USD>200</USD>\r\n  </unit_amount_in_cents>\r\n</add_on>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/plans/platinum/add_ons",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"plans",
+								"platinum",
+								"add_ons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get addon",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/plans/platinum/add_ons/ipaddresses",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"plans",
+								"platinum",
+								"add_ons",
+								"ipaddresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update addon",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<add_on>\r\n  <unit_amount_in_cents>\r\n    <USD>1200</USD>\r\n  </unit_amount_in_cents>\r\n</add_on>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/plans/platinum/add_ons/ipaddresses",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"plans",
+								"platinum",
+								"add_ons",
+								"ipaddresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete addon",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic NzAyZjhhOGMwNjRmNGFhYTg3YjY4OTQ2YmQ2NDczYTU6",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://rwwwwwwww.eu.recurly.com/v2/plans/platinum/add_ons/ipaddresses",
+							"protocol": "https",
+							"host": [
+								"rwwwwwwww",
+								"eu",
+								"recurly",
+								"com"
+							],
+							"path": [
+								"v2",
+								"plans",
+								"platinum",
+								"add_ons",
+								"ipaddresses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
